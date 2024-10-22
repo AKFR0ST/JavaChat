@@ -1,13 +1,16 @@
 # JavaChat
+full-scale multi-user chat
 
-Реализация клиент-серверной игры “Танки” на двух игроков. Поддержка сохранения статистики боев в БД.
-
-# Сборка
-
-cd TanksServer-folder/Server && mvn clean install && cd ../../TanksClient-folder/Client && mvn clean install && cd ../..
-
-# Запуск
-
-Нужно 3 окна: \
-2 окна - cd TanksClient-folder/Client && java -jar target/Client-1.0-SNAPSHOT.jar \
-1 окно - cd TanksServer-folder/Server && java -jar target/Server-1.0-SNAPSHOT.jar
+registration functionality
+provide multi-user messaging
+support the following chat user lifecycle:
+- Registration;
+- Sign in (if no user is detected, close a connection);
+- Send messages (each user connected to the server must receive a message);
+- Log off.
+concept of "chatrooms". Each user can:
+- Create a chatroom;
+- Select a chatroom;
+- Send a message to a chatroom;
+- Leave a chatroom.
+When the user re-enters the application, the last 30 messages are displayed in the room the user previously visited.
